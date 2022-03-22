@@ -27,12 +27,9 @@ public class PlayerMove : MonoBehaviour
         float speedMultuplier = 1f;
 
         if (!_playerJump.IsGround)
-            speedMultuplier = 0.2f;
-        
-        if (_rigidbody.velocity.x > _maxSpeed && Input.GetAxis("Horizontal") > 0)
-            speedMultuplier = 0f;
-        if (_rigidbody.velocity.x < -_maxSpeed && Input.GetAxis("Horizontal") < 0)
-            speedMultuplier = 0f;
+        {
+            LimitSpeedInAir(ref speedMultuplier);
+        }
 
         _rigidbody.AddForce(Input.GetAxis("Horizontal") * _moveSpeed * speedMultuplier, 0, 0, ForceMode.VelocityChange);
 
@@ -43,5 +40,14 @@ public class PlayerMove : MonoBehaviour
     private void ResistanceVelocity()
     {
         _rigidbody.AddForce(- _rigidbody.velocity.x * _friction, 0, 0, ForceMode.VelocityChange);
+    }
+
+    private void LimitSpeedInAir(ref float speedMultuplier)
+    {
+        speedMultuplier = 0.2f;
+        if (_rigidbody.velocity.x > _maxSpeed && Input.GetAxis("Horizontal") > 0)
+            speedMultuplier = 0f;
+        if (_rigidbody.velocity.x < -_maxSpeed && Input.GetAxis("Horizontal") < 0)
+            speedMultuplier = 0f;
     }
 }
