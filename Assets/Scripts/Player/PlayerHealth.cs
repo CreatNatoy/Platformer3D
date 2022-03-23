@@ -5,6 +5,13 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int _health = 5;
     [SerializeField] private int _maxHealth = 8;
     [SerializeField] private SoundEffects _soundEffects;
+    [SerializeField] private HealthUI _healthUI;
+
+    private void Start()
+    {
+        _healthUI.Setup(_maxHealth);
+        _healthUI.DisplayHealth(_health);
+    }
 
     private bool _invulnerable = false; 
 
@@ -19,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
         _invulnerable = true;
         Invoke("StopInvulnerable", 1f);
         _soundEffects.MeHitSound();
+        _healthUI.DisplayHealth(_health);
     }
 
     private void StopInvulnerable()
@@ -36,7 +44,8 @@ public class PlayerHealth : MonoBehaviour
         _health += healthValue;
         if (_health > _maxHealth)
             _health = _maxHealth;
-        _soundEffects.PickUpHealthSound(); 
+        _soundEffects.PickUpHealthSound();
+        _healthUI.DisplayHealth(_health);
     }
 
 }
