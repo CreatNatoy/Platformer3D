@@ -6,15 +6,15 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int damageValue)
     {
-        _health -= damageValue;
-        if(_health <= 0)
+        _health = Mathf.Max(_health - damageValue, 0);
+        if (_health <= 0)
         {
-            Die(); 
+            Die();
         }
     }
 
     private void Die()
     {
-        Destroy(gameObject); 
+        Destroy(gameObject);
     }
 }

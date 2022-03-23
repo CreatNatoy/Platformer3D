@@ -6,7 +6,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform _spawnTransofrm;
     [SerializeField] private float _bulletSpeed = 10f;
     [SerializeField] private float _shotPeriod = 0.2f;
-    [SerializeField] private AudioSource _shotSound;
+    [SerializeField] private SoundEffects _soundEffects;
     [SerializeField] private GameObject _flash; 
 
     private float _timer; 
@@ -28,7 +28,7 @@ public class Gun : MonoBehaviour
     {
         Bullet newBullet = Instantiate(_bulletPrefab, _spawnTransofrm.position, _spawnTransofrm.rotation);
         newBullet.GetComponent<Rigidbody>().velocity = _spawnTransofrm.forward * _bulletSpeed;
-        _shotSound.Play();
+        _soundEffects.ShotSound();
         _flash.SetActive(true);
         Invoke("HideFlash", 0.12f); 
     }
