@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int _health;
+
+    [SerializeField] private UnityEvent _eventOnTakeDamage; 
 
     public void TakeDamage(int damageValue)
     {
@@ -11,6 +14,7 @@ public class EnemyHealth : MonoBehaviour
         {
             Die();
         }
+        _eventOnTakeDamage?.Invoke(); 
     }
 
     private void Die()

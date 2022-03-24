@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -6,8 +7,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int _maxHealth = 8;
     [SerializeField] private SoundEffects _soundEffects;
     [SerializeField] private HealthUI _healthUI;
-    [SerializeField] private DamageScreen _damageScreen;
-    [SerializeField] private Blink _blink;
+
+    [SerializeField] private UnityEvent _eventOnTakeDamage; 
 
     private void Start()
     {
@@ -24,13 +25,12 @@ public class PlayerHealth : MonoBehaviour
             _health = Mathf.Max(_health - damageValue, 0);
             if (_health <= 0)
                 Die();
+            _healthUI.DisplayHealth(_health);
+
+            _eventOnTakeDamage?.Invoke();
         }
         _invulnerable = true;
         Invoke("StopInvulnerable", 1f);
-        _soundEffects.MeHitSound();
-        _healthUI.DisplayHealth(_health);
-        _damageScreen.StartEffect();
-        _blink.StartBlink(); 
     }
 
     private void StopInvulnerable()

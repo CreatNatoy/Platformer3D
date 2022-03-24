@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class SoundEffects : MonoBehaviour
 {
-    [SerializeField] private AudioClip _shotSound, _pickUpHealth, _meHit; 
+    [SerializeField] private AudioClip _shotSound, _pickUpHealth, _meHit, _hit; 
 
     private AudioSource _audioSourceEffect;
 
@@ -25,5 +25,10 @@ public class SoundEffects : MonoBehaviour
     public void MeHitSound()
     {
         _audioSourceEffect.PlayOneShot(_meHit);
+    }
+
+    public void HitSound()
+    {
+        _audioSourceEffect.PlayOneShot(_hit); 
     }
 }
