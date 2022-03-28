@@ -1,17 +1,7 @@
 using UnityEngine;
 
-[RequireComponent(typeof(EnemyHealth))]
-public class TakeDamageOncollision : MonoBehaviour
+public class TakeDamageOnCollision : TakeDamage
 {
-    [SerializeField] private bool _dieOnAnyCollision; 
-
-    private EnemyHealth _enemyHealth;
-
-    private void Start()
-    {
-        _enemyHealth = GetComponent<EnemyHealth>(); 
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         Bullet _bullet = collision.gameObject.GetComponent<Bullet>();
@@ -22,7 +12,7 @@ public class TakeDamageOncollision : MonoBehaviour
 
         if(_dieOnAnyCollision)
         {
-            _enemyHealth.TakeDamage(1);
+            _enemyHealth.TakeDamage(100);
         }
     }
 }

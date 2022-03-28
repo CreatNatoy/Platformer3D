@@ -72,7 +72,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!153 &5349008857386685623
 ConfigurableJoint:
@@ -86,7 +86,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 3.39, y: 1.75, z: 0}
+  m_ConnectedAnchor: {x: 4.38, y: 1.232, z: 0}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 2
@@ -182,25 +182,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be3691d0b3b2fc4e8412f8be258ab9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 10
+  _health: 3
   _eventOnTakeDamage:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5349008857386685617}
         m_TargetAssemblyTypeName: Blink, Assembly-CSharp
         m_MethodName: StartBlink
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SoundEffects, Assembly-CSharp
-        m_MethodName: HitSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
