@@ -4,7 +4,7 @@ public class RotateToPlayer : MonoBehaviour
 {
     [SerializeField] private Vector3 _leftEuler; 
     [SerializeField] private Vector3 _rightEuler;
-    [SerializeField] private float _speed;
+    [SerializeField] private float _speed = 5f;
 
     private Transform _playerTransform;
 
