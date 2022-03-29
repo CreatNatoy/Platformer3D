@@ -10,7 +10,7 @@ public class TakeDamageOnTrigger : TakeDamage
                 _enemyHealth.TakeDamage(1);
             }
 
-            if (_dieOnAnyCollision)
+            if (_dieOnAnyCollision && !other.isTrigger)
             {
                 _enemyHealth.TakeDamage(100);
             }
