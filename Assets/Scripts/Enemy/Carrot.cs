@@ -14,9 +14,14 @@ public class Carrot : MonoBehaviour
 
         _playerTransform = PlayerSingleton.Instance.transform;
 
-        Vector3 toPlayer = _playerTransform.position - transform.position;
+        CarrotToPlayer();
+    }
 
-        _rigidbody.AddForce(toPlayer * _force); 
+    private void CarrotToPlayer()
+    {
+        transform.rotation = Quaternion.identity;
+        Vector3 toPlayer = _playerTransform.position - transform.position;
+        _rigidbody.AddForce(toPlayer * _force);
     }
 
 }

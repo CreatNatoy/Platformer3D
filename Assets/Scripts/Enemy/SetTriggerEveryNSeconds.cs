@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class Rabbit : MonoBehaviour
+public class SetTriggerEveryNSeconds : MonoBehaviour
 {
     [SerializeField] private float _attackPeriod = 7f;
     [SerializeField] private Animator _animator;
+    [SerializeField] private string _triggerName = "Attack"; 
 
     private float _timer;
 
@@ -13,7 +14,7 @@ public class Rabbit : MonoBehaviour
         if(_timer > _attackPeriod)
         {
             _timer = 0;
-            _animator.SetTrigger("Attack");
+            _animator.SetTrigger(_triggerName);
         }
     }
 }
