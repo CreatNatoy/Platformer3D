@@ -6,7 +6,7 @@ public class BatchPrefabCreator : MonoBehaviour
     [SerializeField] private Transform[] _spawns; 
 
     [ContextMenu("Create")]
-    private void Create()
+    public void Create()
     {
         for(int i = 0; i < _spawns.Length; i++)
         {
