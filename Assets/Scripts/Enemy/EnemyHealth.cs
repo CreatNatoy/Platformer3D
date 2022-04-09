@@ -10,7 +10,6 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damageValue)
     {
         _health = Mathf.Max(_health - damageValue, 0);
-        Debug.Log(_health);
         if (_health <= 0)
         {
             Die();

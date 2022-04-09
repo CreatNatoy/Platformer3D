@@ -13,7 +13,8 @@ public class Walker : MonoBehaviour
     [SerializeField] private Transform _pointRight;
     [SerializeField] private float _speed;
     [SerializeField] private float _stopTime;
-    [SerializeField] private Direction _currentDirection; 
+    [SerializeField] private Direction _currentDirection;
+    [SerializeField] private Transform _rayStart; 
 
     private bool _isStopped;
 
@@ -29,9 +30,23 @@ public class Walker : MonoBehaviour
     private void Update()
     {
         if (_isStopped)
-            return; 
+            return;
 
-        if(_currentDirection == Direction.Left)
+        Move();
+
+        AttractionToGround();
+    }
+
+    private void AttractionToGround()
+    {
+        RaycastHit hit;
+        if(Physics.Raycast(_rayStart.position, Vector3.down, out hit))
+            transform.position = hit.point;
+    }
+
+    private void Move()
+    {
+        if (_currentDirection == Direction.Left)
         {
             transform.position -= new Vector3(Time.deltaTime * _speed, 0, 0);
             if (transform.position.x < _pointLeft.position.x)
@@ -40,7 +55,7 @@ public class Walker : MonoBehaviour
         else
         {
             transform.position += new Vector3(Time.deltaTime * _speed, 0, 0);
-            if(transform.position.x > _pointRight.position.x)
+            if (transform.position.x > _pointRight.position.x)
                 ChangeDirection(Direction.Left, EventRightPoint);
         }
     }
