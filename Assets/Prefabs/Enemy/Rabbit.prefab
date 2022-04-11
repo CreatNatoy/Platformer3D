@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 8653921044927760685}
   - component: {fileID: 8653921044927760684}
   - component: {fileID: 8653921044927760680}
+  - component: {fileID: 549537354034209881}
   m_Layer: 0
   m_Name: Rabbit
   m_TagString: Untagged
@@ -197,6 +198,18 @@ MonoBehaviour:
   _leftEuler: {x: 0, y: -10, z: 0}
   _rightEuler: {x: 0, y: -160, z: 0}
   _speed: 5
+--- !u!114 &549537354034209881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8653921044927760689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5144bdfa39b86ff48a17463cc3c2a5fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8653921046181287523
 GameObject:
   m_ObjectHideFlags: 0
