@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 
 public class ActivateByDistance : MonoBehaviour
@@ -29,9 +28,12 @@ public class ActivateByDistance : MonoBehaviour
         gameObject.SetActive(state);
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
-        Handles.color = Color.yellow;
-        Handles.DrawWireDisc(transform.position, Vector3.forward, _distanceToActibate);
+        UnityEditor.Handles.color = Color.yellow;
+        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, _distanceToActibate);
     }
+#endif
+
 }

@@ -37,4 +37,9 @@ public class Gun : MonoBehaviour
     {
         _flash.SetActive(false); 
     }
+
+    public void ChangeState(bool state)
+    {
+        gameObject.SetActive(state);
+    }
 }
