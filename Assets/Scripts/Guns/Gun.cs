@@ -24,7 +24,7 @@ public class Gun : MonoBehaviour
         }
     }
 
-    private void Shot()
+    public virtual void Shot()
     {
         Bullet newBullet = Instantiate(_bulletPrefab, _spawnTransofrm.position, _spawnTransofrm.rotation);
         newBullet.GetComponent<Rigidbody>().velocity = _spawnTransofrm.forward * _bulletSpeed;
@@ -38,7 +38,7 @@ public class Gun : MonoBehaviour
         _flash.SetActive(false); 
     }
 
-    public void ChangeState(bool state)
+    public virtual void ChangeState(bool state)
     {
         gameObject.SetActive(state);
     }
