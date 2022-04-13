@@ -29,4 +29,11 @@ public class Automat : Gun
     {
         _bulletsText.text = "Bullet: " + _numberOfBullets.ToString();
     }
+
+    public override void AddBullets(int numberOfBullets)
+    {
+       _numberOfBullets += numberOfBullets;
+        UpdateText();
+        _playerArmory.TakeGunByIndex(1); 
+    }
 }

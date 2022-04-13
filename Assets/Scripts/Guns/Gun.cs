@@ -7,19 +7,19 @@ public class Gun : MonoBehaviour
     [SerializeField] private float _bulletSpeed = 10f;
     [SerializeField] private float _shotPeriod = 0.2f;
     [SerializeField] private SoundEffects _soundEffects;
-    [SerializeField] private GameObject _flash; 
+    [SerializeField] private GameObject _flash;
 
-    private float _timer; 
+    private float _timer;
 
     private void Update()
     {
         _timer += Time.deltaTime;
-        if(_timer > _shotPeriod)
+        if (_timer > _shotPeriod)
         {
-            if(Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0))
             {
                 Shot();
-                _timer = 0f; 
+                _timer = 0f;
             }
         }
     }
@@ -30,16 +30,21 @@ public class Gun : MonoBehaviour
         newBullet.GetComponent<Rigidbody>().velocity = _spawnTransofrm.forward * _bulletSpeed;
         _soundEffects.ShotSound();
         _flash.SetActive(true);
-        Invoke("HideFlash", 0.12f); 
+        Invoke("HideFlash", 0.12f);
     }
 
     private void HideFlash()
     {
-        _flash.SetActive(false); 
+        _flash.SetActive(false);
     }
 
     public virtual void ChangeState(bool state)
     {
         gameObject.SetActive(state);
     }
+
+    public virtual void AddBullets (int numberOfBullets)
+    {
+    }
+    
 }
