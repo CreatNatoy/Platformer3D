@@ -38,7 +38,7 @@ public class JumpGun : MonoBehaviour
 
     private void LoadCharge()
     {
-        _currentCharge += Time.deltaTime;
+        _currentCharge += Time.unscaledDeltaTime;
         _chargeIcon.SetChargeValue(_currentCharge, _maxCharge);
         if (_currentCharge >= _maxCharge)
         {
