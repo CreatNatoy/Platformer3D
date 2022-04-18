@@ -8,6 +8,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private float _shotPeriod = 0.2f;
     [SerializeField] private SoundEffects _soundEffects;
     [SerializeField] private GameObject _flash;
+    [SerializeField] private ParticleSystem _shotEffect; 
 
     private float _timer;
 
@@ -31,6 +32,7 @@ public class Gun : MonoBehaviour
         _soundEffects.ShotSound();
         _flash.SetActive(true);
         Invoke("HideFlash", 0.12f);
+        _shotEffect.Play();
     }
 
     private void HideFlash()
