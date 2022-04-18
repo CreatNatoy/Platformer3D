@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8566929577131429482}
   - component: {fileID: 8566929577131429483}
   - component: {fileID: 8566929577131429396}
+  - component: {fileID: 264205751818364200}
   m_Layer: 0
   m_Name: Acorn
   m_TagString: Untagged
@@ -83,6 +84,21 @@ MonoBehaviour:
   _eventOnTakeDamage:
     m_PersistentCalls:
       m_Calls: []
+  _eventOnDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 264205751818364200}
+        m_TargetAssemblyTypeName: PrefabCreater, Assembly-CSharp
+        m_MethodName: Create
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8566929577131429483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +125,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageValue: 1
+--- !u!114 &264205751818364200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8566929577131429392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d5db41679482d7408da9ee85e1e2ce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 5897381485133186079, guid: d90290d0f9b381a48b1f2c2ed756b030, type: 3}
+  _spawnPoint: {fileID: 8566929577131429397}
 --- !u!1 &8566929578866169551
 GameObject:
   m_ObjectHideFlags: 0

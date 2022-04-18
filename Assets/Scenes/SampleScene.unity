@@ -5549,6 +5549,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 193546606}
     m_Modifications:
+    - target: {fileID: 137411431659146308, guid: e7118e82de40d5c4dbfe711326e94fe2, type: 3}
+      propertyPath: _attackPeriod
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 137411431659146310, guid: e7118e82de40d5c4dbfe711326e94fe2, type: 3}
       propertyPath: m_Name
       value: Bear
@@ -5624,7 +5628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 493896741666898805, guid: c38a4df91b3bd2d4b98e1f7add9cb2c7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 493896741666898807, guid: c38a4df91b3bd2d4b98e1f7add9cb2c7, type: 3}
       propertyPath: m_RootOrder
