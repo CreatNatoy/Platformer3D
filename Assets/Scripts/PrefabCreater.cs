@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PrefabBulletCreater : MonoBehaviour
+public class PrefabCreater : MonoBehaviour
 {
     [SerializeField] private GameObject _prefab;
     [SerializeField] private Transform _spawnPoint; 

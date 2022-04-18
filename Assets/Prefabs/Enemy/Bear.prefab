@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 137411431659146309}
   - component: {fileID: 137411431659146318}
   - component: {fileID: -6026114409454052539}
+  - component: {fileID: 112439257}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Untagged
@@ -65,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb2f2335d8e2ca458d29adf23f149e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackPeriod: 5
+  _attackPeriod: 1
   _animator: {fileID: 137411432018719003}
   _triggerName: Attack
 --- !u!114 &137411431659146304
@@ -106,6 +107,21 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Damage
+          m_BoolArgument: 0
+        m_CallState: 2
+  _eventOnDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 112439257}
+        m_TargetAssemblyTypeName: PrefabCreater, Assembly-CSharp
+        m_MethodName: Create
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &137411431659146307
@@ -192,6 +208,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5144bdfa39b86ff48a17463cc3c2a5fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _distanceToActibate: 20
+--- !u!114 &112439257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137411431659146310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d5db41679482d7408da9ee85e1e2ce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 5897381485133186079, guid: 0a1edbd4ef7d4654c9b360cae1116894, type: 3}
+  _spawnPoint: {fileID: 137411431659146311}
 --- !u!1 &137411433413066220
 GameObject:
   m_ObjectHideFlags: 0
