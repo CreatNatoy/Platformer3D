@@ -9,14 +9,14 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private HealthUI _healthUI;
 
     [SerializeField] private UnityEvent _eventOnTakeDamage; 
-
+    
+    private bool _invulnerable = false;
+    
     private void Start()
     {
         _healthUI.Setup(_maxHealth);
         _healthUI.DisplayHealth(_health);
     }
-
-    private bool _invulnerable = false;
 
     public void TakeDamage(int damageValue)
     {

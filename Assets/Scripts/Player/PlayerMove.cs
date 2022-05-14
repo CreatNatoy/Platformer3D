@@ -14,7 +14,7 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _playerJump = GetComponent<PlayerJump>(); 
+        _playerJump = GetComponent<PlayerJump>();
     }
 
     private void FixedUpdate()

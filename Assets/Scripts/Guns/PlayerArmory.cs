@@ -3,8 +3,7 @@ using UnityEngine;
 public class PlayerArmory : MonoBehaviour
 {
     [SerializeField] private Gun[] _guns;
-    [SerializeField] private int _currentGunIndex = 0; 
-
+    [SerializeField] private int _currentGunIndex = 0;
     private void Start()
     {
         TakeGunByIndex(_currentGunIndex);
@@ -15,10 +14,7 @@ public class PlayerArmory : MonoBehaviour
         _currentGunIndex = gunIndex;
         for (int i = 0; i < _guns.Length; i++)
         {
-            if (i == gunIndex)
-                _guns[i].ChangeState(true); 
-            else
-                _guns[i].ChangeState(false);
+            _guns[i].ChangeState(i == gunIndex);
         }
     }
 

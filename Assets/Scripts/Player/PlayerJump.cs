@@ -6,10 +6,10 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private float _jumpedForce;
     [SerializeField] private float _angleGroundJump = 45f;
 
-    private bool _isGround;
     private Rigidbody _rigidbody;
-
-    public bool IsGround => _isGround; 
+    private bool _isGround;
+    
+    public bool IsGround => _isGround;
 
     private void Start()
     {
@@ -19,7 +19,9 @@ public class PlayerJump : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && _isGround)
+        {
             Jump();
+        }
     }
 
     private void Jump()
@@ -35,9 +37,10 @@ public class PlayerJump : MonoBehaviour
             if (angle < _angleGroundJump)
                 return true;
         }
+
         return false;
     }
-
+    
     private void OnCollisionStay(Collision collision)
     {
         _isGround = CheckDownGround(collision);
