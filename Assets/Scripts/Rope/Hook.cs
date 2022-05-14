@@ -5,7 +5,8 @@ public class Hook : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private Collider _collider;
-    [SerializeField] private Collider _playerCollider; 
+    [SerializeField] private Collider _playerCollider;
+    [SerializeField] private RopeGun _ropeGun; 
     private FixedJoint _fixedJoint;
 
     public Rigidbody Rigidbody => _rigidbody;
@@ -24,6 +25,7 @@ public class Hook : MonoBehaviour
             {
                 _fixedJoint.connectedBody = collision.rigidbody;
             }
+            _ropeGun.CreateSpring();
         }
     }
 
