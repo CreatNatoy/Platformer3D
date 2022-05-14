@@ -40,6 +40,7 @@ public class PlayerMove : MonoBehaviour
     private void ResistanceVelocity()
     {
         _rigidbody.AddForce(- _rigidbody.velocity.x * _friction, 0, 0, ForceMode.VelocityChange);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * 15f);
     }
 
     private void LimitSpeedInAir(ref float speedMultuplier)
