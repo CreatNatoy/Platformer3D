@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointLeft: {fileID: 3678062099950349155}
   _pointRight: {fileID: 3678062101099684896}
-  _speed: 3
+  _speed: 5
   _stopTime: 0.5
   _currentDirection: 0
   _rayStart: {fileID: 3678062100154940473}

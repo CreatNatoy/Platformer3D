@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb2f2335d8e2ca458d29adf23f149e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackPeriod: 3
+  _attackPeriod: 1
   _animator: {fileID: 8653921045693035974}
   _triggerName: Attack
 --- !u!114 &8653921044927760683

@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -7,15 +9,23 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int _maxHealth = 8;
     [SerializeField] private SoundEffects _soundEffects;
     [SerializeField] private HealthUI _healthUI;
-
+    [SerializeField] private float _dropDistanceDie = -20f; 
     [SerializeField] private UnityEvent _eventOnTakeDamage; 
     
-    private bool _invulnerable = false;
+    private bool _invulnerable;
     
     private void Start()
     {
         _healthUI.Setup(_maxHealth);
         _healthUI.DisplayHealth(_health);
+    }
+
+    private void Update()
+    {
+        if (transform.position.y < _dropDistanceDie)
+        {
+            Die();
+        }
     }
 
     public void TakeDamage(int damageValue)
@@ -40,7 +50,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("You Lose");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void AddHealth(int healthValue)
