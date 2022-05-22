@@ -1,16 +1,13 @@
 # Platformer3D
- Creation of a 3D platformer.
+ Creation of a 3D platformer. Using as much physics as possible, partial systems, events, animation, join.
  
-### 1 part.
+### Controller game
+* A,B - Move 
+* Space - Jump 
+* Left Shift - Powerful jump with a shot
+* Left click (Mouse) - Shot
+* Right click (Mouse) - Time dilation
+* Middle click (Mouse) - Hook shot
 
-Creating a player, in the movement we use only physics. (UI)
-
-### 2 part.
-
-Creation of 5 types of enemies, also using physics and transform.
-- Events
-- Create animations
-
-
-https://user-images.githubusercontent.com/76531899/162628229-1e41e95c-0f30-4513-a3ae-db5a60c5460a.mp4
+https://user-images.githubusercontent.com/76531899/169707381-5d934083-5135-42eb-8fce-f80fa39604b2.mp4
 
