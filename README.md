@@ -20,6 +20,10 @@
 
 - [CreatNatoy](https://github.com/CreatNatoy)
 
+## Download exe
+
+- [Platform3D.exe](https://drive.google.com/file/d/1zhOSAqKLI36PxvhJ13pN4KXc8tivAK_J/view?usp=sharing)
+
 ## Gameplay
 
 https://user-images.githubusercontent.com/76531899/169707381-5d934083-5135-42eb-8fce-f80fa39604b2.mp4
